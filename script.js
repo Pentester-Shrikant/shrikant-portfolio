@@ -1,0 +1,262 @@
+document.body.classList.add('js');
+
+const canvas = document.getElementById('matrixCanvas');
+const ctx = canvas ? canvas.getContext('2d') : null;
+let width, height, columns, drops;
+
+function resize(){
+  if(!canvas || !ctx) return;
+  width = canvas.width = innerWidth;
+  height = canvas.height = innerHeight;
+  columns = Math.floor(width / 18);
+  drops = Array(columns).fill(1);
+}
+resize();
+addEventListener('resize', resize);
+
+function matrix(){
+  if(!canvas || !ctx) return;
+  ctx.fillStyle = 'rgba(3,3,5,0.12)';
+  ctx.fillRect(0,0,width,height);
+  ctx.fillStyle = '#ff1744';
+  ctx.font = '14px monospace';
+  for(let i=0;i<drops.length;i++){
+    const text = Math.random() > .5 ? '0' : '1';
+    ctx.fillText(text, i*18, drops[i]*18);
+    if(drops[i]*18 > height && Math.random() > .975) drops[i]=0;
+    drops[i]++;
+  }
+}
+setInterval(matrix, 55);
+
+const menuButton = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+if(menuButton && navLinks){
+  menuButton.addEventListener('click',()=>{
+    navLinks.classList.toggle('open');
+  });
+}
+
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open'));
+});
+
+const year = document.getElementById('year');
+if(year) year.textContent = new Date().getFullYear();
+
+const glow = document.querySelector('.cursor-glow');
+if(glow){
+  addEventListener('pointermove', e=>{
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  });
+}
+
+if('IntersectionObserver' in window){
+const reveal = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      reveal.unobserve(entry.target);
+    }
+  });
+},{threshold:.14});
+
+document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+}
+
+document.querySelectorAll('.tilt-card').forEach(card=>{
+  card.addEventListener('mousemove', e=>{
+    const r = card.getBoundingClientRect();
+    const x = e.clientX - r.left;
+    const y = e.clientY - r.top;
+    const rx = ((y / r.height) - .5) * -10;
+    const ry = ((x / r.width) - .5) * 10;
+    card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+  });
+  card.addEventListener('mouseleave',()=>{
+    card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateY(0)';
+  });
+});
+
+// Add your certificate images here after uploading them to the certificates folder.
+// Example: { title: 'Certificate Name', file: 'certificates/my-certificate.png' }
+const certificateImages = [
+  // { title: 'My Certificate', file: 'certificates/my-certificate.png' }
+];
+
+// Add customer satisfaction images here after uploading them to the customer-satisfaction folder.
+// Example: { title: 'Client Feedback', file: 'customer-satisfaction/client-feedback.png' }
+const satisfactionImages = [
+  // { title: 'Client Feedback', file: 'customer-satisfaction/client-feedback.png' }
+];
+
+// Add your solved CTF badge cards here.
+// Upload the badge image to the badges folder, then use the same path in image.
+const badgeLinks = [
+  {
+    title: 'TryHackMe Badge 01',
+    image: 'https://assets.tryhackme.com/room-badges/1439b0d200fa3b7ef154b467b4d551d1.png',
+    url: 'https://assets.tryhackme.com/room-badges/1439b0d200fa3b7ef154b467b4d551d1.png',
+    description: 'Verified TryHackMe achievement badge',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'TryHackMe Badge 02',
+    image: 'https://assets.tryhackme.com/room-badges/a64e088212fb9a34edd9f5de873ef468.png',
+    url: 'https://assets.tryhackme.com/room-badges/a64e088212fb9a34edd9f5de873ef468.png',
+    description: 'Verified TryHackMe achievement badge',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'TryHackMe Badge 03',
+    image: 'https://assets.tryhackme.com/room-badges/03f7d810170bb89b0f30dc34f714429d.png',
+    url: 'https://assets.tryhackme.com/room-badges/03f7d810170bb89b0f30dc34f714429d.png',
+    description: 'Verified TryHackMe achievement badge',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'TryHackMe Badge 04',
+    image: 'https://assets.tryhackme.com/room-badges/356f0e028681fdc21515042572a2e1c4.png',
+    url: 'https://assets.tryhackme.com/room-badges/356f0e028681fdc21515042572a2e1c4.png',
+    description: 'Verified TryHackMe achievement badge',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'TryHackMe Badge 05',
+    image: 'https://assets.tryhackme.com/room-badges/98e1a1f3d80d8714a09f86b4c089398c.png',
+    url: 'https://assets.tryhackme.com/room-badges/98e1a1f3d80d8714a09f86b4c089398c.png',
+    description: 'Verified TryHackMe achievement badge',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'Hack The Box Academy Badge 01',
+    image: 'https://academy.hackthebox.com/achievement/badge/a0957aca-c408-11ed-acfc-bea50ffe6cb4',
+    url: 'https://academy.hackthebox.com/achievement/badge/a0957aca-c408-11ed-acfc-bea50ffe6cb4',
+    description: 'Verified Hack The Box Academy badge',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'Hack The Box Academy Badge 02',
+    image: 'https://academy.hackthebox.com/achievement/badge/ae2cb5ce-c408-11ed-acfc-bea50ffe6cb4',
+    url: 'https://academy.hackthebox.com/achievement/badge/ae2cb5ce-c408-11ed-acfc-bea50ffe6cb4',
+    description: 'Verified Hack The Box Academy badge',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'Hack The Box Academy Badge 03',
+    image: 'https://academy.hackthebox.com/achievement/badge/33047f95-4a97-11f1-82d1-bea50ffe6cb4',
+    url: 'https://academy.hackthebox.com/achievement/badge/33047f95-4a97-11f1-82d1-bea50ffe6cb4',
+    description: 'Verified Hack The Box Academy badge',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'Hack The Box Academy Badge 04',
+    image: 'https://academy.hackthebox.com/achievement/badge/b52a171c-c408-11ed-acfc-bea50ffe6cb4',
+    url: 'https://academy.hackthebox.com/achievement/badge/b52a171c-c408-11ed-acfc-bea50ffe6cb4',
+    description: 'Verified Hack The Box Academy badge',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'Hack The Box Academy Badge 05',
+    image: 'https://academy.hackthebox.com/achievement/badge/d0080789-ed6b-11ed-acfc-bea50ffe6cb4',
+    url: 'https://academy.hackthebox.com/achievement/badge/d0080789-ed6b-11ed-acfc-bea50ffe6cb4',
+    description: 'Verified Hack The Box Academy badge',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'First Blood',
+    image: 'badges/bugthrive-placeholder.svg',
+    url: 'https://labs.bugthrive.com/achievement/firstblood/6a26ac58eec06840ae4d3c47',
+    description: 'BugThrive Labs achievement',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'Blacktop',
+    image: 'https://ik.imagekit.io/bugthrive/labs/blacktop-01_o0uxZWWg5j.png',
+    url: 'https://labs.bugthrive.com/achievement/blacktop/6a26ac58eec06840ae4d3c47',
+    description: 'BugThrive Labs achievement',
+    rank: '--',
+    level: '--'
+  },
+  {
+    title: 'EchoDesk App',
+    image: 'badges/bugthrive-placeholder.svg',
+    url: 'https://labs.bugthrive.com/achievement/echodesk-app/6a26ac58eec06840ae4d3c47',
+    description: 'BugThrive Labs achievement',
+    rank: '--',
+    level: '--'
+  }
+];
+
+function renderImageGallery(containerId, items, emptyText){
+  const container = document.getElementById(containerId);
+  if(!container) return;
+
+  if(!items.length){
+    container.innerHTML = `<div class="empty-card reveal visible">${emptyText}</div>`;
+    return;
+  }
+
+  container.innerHTML = items.map(item => `
+    <article class="media-card reveal visible">
+      <img src="${item.file}" alt="${item.title}">
+      <div class="media-body"><h3>${item.title}</h3></div>
+    </article>
+  `).join('');
+}
+
+function renderBadges(){
+  const container = document.getElementById('badgesGrid');
+  if(!container) return;
+
+  if(!badgeLinks.length){
+    container.innerHTML = '<div class="empty-card reveal visible">Upload or link your solved CTF badges, then add each badge in script.js under badgeLinks.</div>';
+    return;
+  }
+
+  container.innerHTML = badgeLinks.map((badge, index) => `
+    <a class="badge-card reveal visible" href="${badge.url || '#'}" target="_blank" rel="noopener noreferrer">
+      <div class="badge-top">
+        <div>
+          <h3>Shrikant</h3>
+          <p>was awarded a badge</p>
+        </div>
+
+        <div class="badge-stats">
+          <strong>${badge.rank || '--'}</strong>
+          <span>Rank</span>
+          <strong>${badge.level || '--'}</strong>
+          <span>Level</span>
+        </div>
+      </div>
+
+      <div class="badge-image-wrap">
+        <img src="${badge.image || 'badges/bugthrive-placeholder.svg'}" alt="${badge.title || `CTF Badge ${index + 1}`} badge" onerror="this.onerror=null; this.src='badges/bugthrive-placeholder.svg';">
+      </div>
+
+      <div class="badge-content">
+        <h4>${badge.title || `CTF Badge ${index + 1}`}</h4>
+        <p>${badge.description || 'Verified solved CTF badge or achievement link.'}</p>
+      </div>
+    </a>
+  `).join('');
+}
+
+renderImageGallery('certificateGallery', certificateImages, 'Certificates section is ready. Add images in the certificates folder, then list them in script.js under certificateImages.');
+renderImageGallery('satisfactionGallery', satisfactionImages, 'Customer satisfaction section is ready. Add testimonial or feedback images in the customer-satisfaction folder, then list them in script.js under satisfactionImages.');
+renderBadges();
