@@ -2,18 +2,23 @@ document.body.classList.add('js');
 
 const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas ? canvas.getContext('2d') : null;
-let width, height, columns, drops;
+
+let width;
+let height;
+let columns;
+let drops;
 
 function resize() {
   if (!canvas || !ctx) return;
-  width = canvas.width = innerWidth;
-  height = canvas.height = innerHeight;
+
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
   columns = Math.floor(width / 18);
   drops = Array(columns).fill(1);
 }
 
 resize();
-addEventListener('resize', resize);
+window.addEventListener('resize', resize);
 
 function matrix() {
   if (!canvas || !ctx) return;
@@ -26,6 +31,7 @@ function matrix() {
 
   for (let i = 0; i < drops.length; i++) {
     const text = Math.random() > 0.5 ? '0' : '1';
+
     ctx.fillText(text, i * 18, drops[i] * 18);
 
     if (drops[i] * 18 > height && Math.random() > 0.975) {
@@ -49,11 +55,14 @@ if (menuButton && navLinks) {
 
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
-    if (navLinks) navLinks.classList.remove('open');
+    if (navLinks) {
+      navLinks.classList.remove('open');
+    }
   });
 });
 
 const year = document.getElementById('year');
+
 if (year) {
   year.textContent = new Date().getFullYear();
 }
@@ -61,7 +70,7 @@ if (year) {
 const glow = document.querySelector('.cursor-glow');
 
 if (glow) {
-  addEventListener('pointermove', event => {
+  window.addEventListener('pointermove', event => {
     glow.style.left = event.clientX + 'px';
     glow.style.top = event.clientY + 'px';
   });
@@ -91,6 +100,7 @@ document.querySelectorAll('.tilt-card').forEach(card => {
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
+
     const rotateX = ((y / rect.height) - 0.5) * -10;
     const rotateY = ((x / rect.width) - 0.5) * 10;
 
@@ -122,15 +132,21 @@ const certificateImages = [
   }
 ];
 
-/* Customer Satisfaction */
+/*
+  Customer Satisfaction
+
+  IMPORTANT:
+  Your current uploaded file name has spaces.
+  This encoded path should work with GitHub Pages.
+*/
 const satisfactionImages = [
   {
-    title: 'Client Satisfaction Feedback',
+    title: 'AWS VAPT Client Satisfaction',
     file: 'customer-satisfaction/2026-06-13%2002_00_57-badge_render_fix%20-%20File%20Explorer.png'
   }
 ];
 
-/* Badge fallback */
+/* Badge fallback image */
 const fallbackBadgeSvg = `data:image/svg+xml;utf8,${encodeURIComponent(`
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="280" viewBox="0 0 600 280">
   <defs>
