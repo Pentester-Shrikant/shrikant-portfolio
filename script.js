@@ -88,22 +88,33 @@ const certificateImages = [
   // { title: 'My Certificate', file: 'certificates/my-certificate.png' }
   {
     title: 'CISEH Certificate',
-    image: 'certificates/CISEH.jpeg'
+    image: 'certificates/CISEH.png'
   },
   {
     title: 'CPTE Certificate',
-    image: 'certificates/CPTE.jpeg'
+    image: 'certificates/CPTE.png'
   },
   {
     title: 'UC Certificate',
-    image: 'certificates/UC-364a2adc-234e-440d-9753-f0f49a6eb2b2.jpg'
+    image: 'certificates/UC-364a2adc-234e-440d-9753-f0f49a6eb2b2.png'
   },
   {
     title: 'Certificate',
-    image: 'certificates/certificate.jpg'
+    image: 'certificates/certificate.png'
   }
 ];
 
+const certificatesGrid = document.getElementById('certificatesGrid');
+
+if (certificatesGrid && certificateImages.length) {
+  certificatesGrid.innerHTML = certificateImages.map(cert => `
+    <a class="certificate-card" href="${cert.image}" target="_blank" rel="noopener noreferrer">
+      <img src="${cert.image}" alt="${cert.title}">
+      <h3>${cert.title}</h3>
+      <p>Click to view certificate</p>
+    </a>
+  `).join('');
+}
 // Add customer satisfaction images here after uploading them to the customer-satisfaction folder.
 // Example: { title: 'Client Feedback', file: 'customer-satisfaction/client-feedback.png' }
 const satisfactionImages = [
