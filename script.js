@@ -235,7 +235,6 @@ function renderImageGallery(containerId, items, emptyText) {
       <img src="${item.file}" alt="${item.title}" loading="lazy">
       <div class="media-body">
         <h3>${item.title}</h3>
-        <p>Click to view full certificate</p>
       </div>
     </a>
   `).join('');
