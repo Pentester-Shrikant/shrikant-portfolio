@@ -188,7 +188,7 @@ const badgeLinks = [
   {
     title: 'First Blood',
     platform: 'BugThrive Labs',
-    image: fallbackBadgeSvg,
+    image: 'https://labs.bugthrive.com/achievement/firstblood/6a26ac58eec06840ae4d3c47',
     url: 'https://labs.bugthrive.com/achievement/firstblood/6a26ac58eec06840ae4d3c47',
     description: 'BugThrive Labs achievement'
   },
@@ -202,7 +202,7 @@ const badgeLinks = [
   {
     title: 'EchoDesk App',
     platform: 'BugThrive Labs',
-    image: fallbackBadgeSvg,
+    image: 'https://labs.bugthrive.com/achievement/echodesk-app/6a26ac58eec06840ae4d3c47',
     url: 'https://labs.bugthrive.com/achievement/echodesk-app/6a26ac58eec06840ae4d3c47',
     description: 'BugThrive Labs achievement'
   }
