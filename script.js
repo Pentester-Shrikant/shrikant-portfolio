@@ -141,7 +141,7 @@ const certificateImages = [
 */
 const satisfactionImages = [
   {
-    title: 'AWS VAPT Client Satisfaction',
+    title: 'VAPT Client Satisfaction',
     file: 'customer-satisfaction/2026-06-13%2002_00_57-badge_render_fix%20-%20File%20Explorer.png'
   }
 ];
