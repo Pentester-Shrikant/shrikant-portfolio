@@ -74,7 +74,8 @@ const satisfactionImages = [
 // Example: { title: 'Solved CTF Badge', url: 'https://example.com/my-badge' }
 const badgeLinks = [
   // { title: 'Solved CTF Badge', url: 'https://example.com/my-badge' }
-  { title: 'Blacktop', url: 'https://labs.bugthrive.com/achievement/blacktop/6a26ac58eec06840ae4d3c47'}
+  title: 'Blacktop', 
+    url: 'https://labs.bugthrive.com/achievement/blacktop/6a26ac58eec06840ae4d3c47'
 ];
 
 function renderImageGallery(containerId, items, emptyText){
