@@ -91,7 +91,38 @@ const certificateImages = [
   { title: 'UC Certificate', file: 'certificates/UC-364a2adc-234e-440d-9753-f0f49a6eb2b2.png' },
   { title: 'Certificate', file: 'certificates/certificate.png' }
 ];
+const certificateImages = [
+  { title: 'CISEH Certificate', file: 'certificates/CISEH.png' },
+  { title: 'CPTE Certificate', file: 'certificates/CPTE.png' },
+  { title: 'UC Certificate', file: 'certificates/UC-364a2adc-234e-440d-9753-f0f49a6eb2b2.png' },
+  { title: 'Certificate', file: 'certificates/certificate.png' }
+];
 
+function renderImageGallery(containerId, items, emptyText){
+  const container = document.getElementById(containerId);
+  if(!container) return;
+
+  if(!items.length){
+    container.innerHTML = `<div class="empty-card reveal visible">${emptyText}</div>`;
+    return;
+  }
+
+  container.innerHTML = items.map(item => `
+    <a class="media-card reveal visible" href="${item.file}" target="_blank" rel="noopener noreferrer">
+      <img src="${item.file}" alt="${item.title}">
+      <div class="media-body">
+        <h3>${item.title}</h3>
+        <p>Click to view certificate</p>
+      </div>
+    </a>
+  `).join('');
+}
+
+renderImageGallery(
+  'certificateGallery',
+  certificateImages,
+  'Certificates section is ready. Add images in the certificates folder.'
+);
 // Add customer satisfaction images here after uploading them to the customer-satisfaction folder.
 // Example: { title: 'Client Feedback', file: 'customer-satisfaction/client-feedback.png' }
 const satisfactionImages = [
