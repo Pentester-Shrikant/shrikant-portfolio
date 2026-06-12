@@ -131,11 +131,11 @@ const certificateImages = [
     file: 'certificates/certificate.png'
   },
   {
-    title: 'Cyber Threat Intelligence 101',
+    title: 'Computer Hacking Forensic Investigator',
     file: 'certificates/chfi.png'
   },
   {
-    title: 'Cyber Threat Intelligence 101',
+    title: 'Red Team Operations',
     file: 'certificates/redteam.png'
   }
 ];
