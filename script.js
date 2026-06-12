@@ -129,6 +129,14 @@ const certificateImages = [
   {
     title: 'Cyber Threat Intelligence 101',
     file: 'certificates/certificate.png'
+  },
+  {
+    title: 'Cyber Threat Intelligence 101',
+    file: 'certificates/chfi.png'
+  },
+  {
+    title: 'Cyber Threat Intelligence 101',
+    file: 'certificates/redteam.png'
   }
 ];
 
