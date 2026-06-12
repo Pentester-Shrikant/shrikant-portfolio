@@ -86,6 +86,7 @@ document.querySelectorAll('.tilt-card').forEach(card=>{
 // Example: { title: 'Certificate Name', file: 'certificates/my-certificate.png' }
 const certificateImages = [
   // { title: 'My Certificate', file: 'certificates/my-certificate.png' }
+  { title: 'My Certificate', file: 'https://github.com/Pentester-Shrikant/shrikant-portfolio/blob/master/certificates/CISEH.jpeg'
 ];
 
 // Add customer satisfaction images here after uploading them to the customer-satisfaction folder.
