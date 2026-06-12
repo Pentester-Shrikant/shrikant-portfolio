@@ -86,16 +86,11 @@ document.querySelectorAll('.tilt-card').forEach(card=>{
 // Example: { title: 'Certificate Name', file: 'certificates/my-certificate.png' }
 const certificateImages = [
   // { title: 'My Certificate', file: 'certificates/my-certificate.png' }
-  { title: 'CISEH Certificate', file: 'certificates/CISEH.png' },
-  { title: 'CPTE Certificate', file: 'certificates/CPTE.png' },
-  { title: 'UC Certificate', file: 'certificates/UC-364a2adc-234e-440d-9753-f0f49a6eb2b2.png' },
-  { title: 'Certificate', file: 'certificates/certificate.png' }
-];
-const certificateImages = [
-  { title: 'CISEH Certificate', file: 'certificates/CISEH.png' },
-  { title: 'CPTE Certificate', file: 'certificates/CPTE.png' },
-  { title: 'UC Certificate', file: 'certificates/UC-364a2adc-234e-440d-9753-f0f49a6eb2b2.png' },
-  { title: 'Certificate', file: 'certificates/certificate.png' }
+ const certificateImages = [
+  { title: 'Ethical Hacking', file: 'certificates/CISEH.png' },
+  { title: 'Certified Penetration Tester Expert', file: 'certificates/CPTE.png' },
+  { title: 'Android Pentesting 101', file: 'certificates/UC-364a2adc-234e-440d-9753-f0f49a6eb2b2.png' },
+  { title: 'Cyber Threat Intelligence 101', file: 'certificates/certificate.png' }
 ];
 
 function renderImageGallery(containerId, items, emptyText){
