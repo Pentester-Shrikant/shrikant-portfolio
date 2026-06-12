@@ -153,42 +153,42 @@ const badgeLinks = [
   {
     title: 'HTB Academy Badge 01',
     platform: 'Hack The Box',
-    image: 'https://academy.hackthebox.com/achievement/badge/a0957aca-c408-11ed-acfc-bea50ffe6cb4',
+    image: 'https://academy.hackthebox.com/storage/badges/academician.png',
     url: 'https://academy.hackthebox.com/achievement/badge/a0957aca-c408-11ed-acfc-bea50ffe6cb4',
     description: 'Verified Hack The Box Academy badge'
   },
   {
     title: 'HTB Academy Badge 02',
     platform: 'Hack The Box',
-    image: 'https://academy.hackthebox.com/achievement/badge/ae2cb5ce-c408-11ed-acfc-bea50ffe6cb4',
+    image: 'https://academy.hackthebox.com/storage/badges/your-request-is-my-demand.png',
     url: 'https://academy.hackthebox.com/achievement/badge/ae2cb5ce-c408-11ed-acfc-bea50ffe6cb4',
     description: 'Verified Hack The Box Academy badge'
   },
   {
     title: 'HTB Academy Badge 03',
     platform: 'Hack The Box',
-    image: 'https://academy.hackthebox.com/achievement/badge/33047f95-4a97-11f1-82d1-bea50ffe6cb4',
+    image: 'https://academy.hackthebox.com/storage/badges/fuzzing-is-power.png',
     url: 'https://academy.hackthebox.com/achievement/badge/33047f95-4a97-11f1-82d1-bea50ffe6cb4',
     description: 'Verified Hack The Box Academy badge'
   },
   {
     title: 'HTB Academy Badge 04',
     platform: 'Hack The Box',
-    image: 'https://academy.hackthebox.com/achievement/badge/b52a171c-c408-11ed-acfc-bea50ffe6cb4',
+    image: 'https://academy.hackthebox.com/storage/badges/developer.png',
     url: 'https://academy.hackthebox.com/achievement/badge/b52a171c-c408-11ed-acfc-bea50ffe6cb4',
     description: 'Verified Hack The Box Academy badge'
   },
   {
     title: 'HTB Academy Badge 05',
     platform: 'Hack The Box',
-    image: 'https://academy.hackthebox.com/achievement/badge/d0080789-ed6b-11ed-acfc-bea50ffe6cb4',
+    image: 'https://academy.hackthebox.com/storage/badges/4a11a1a1d810967184694662d629de2d/logo.png',
     url: 'https://academy.hackthebox.com/achievement/badge/d0080789-ed6b-11ed-acfc-bea50ffe6cb4',
     description: 'Verified Hack The Box Academy badge'
   },
   {
     title: 'First Blood',
     platform: 'BugThrive Labs',
-    image: 'https://labs.bugthrive.com/achievement/firstblood/6a26ac58eec06840ae4d3c47',
+    image: 'https://ik.imagekit.io/bugthrive/labs/firstblood_fvH8qgzar.png',
     url: 'https://labs.bugthrive.com/achievement/firstblood/6a26ac58eec06840ae4d3c47',
     description: 'BugThrive Labs achievement'
   },
@@ -202,7 +202,7 @@ const badgeLinks = [
   {
     title: 'EchoDesk App',
     platform: 'BugThrive Labs',
-    image: 'https://labs.bugthrive.com/achievement/echodesk-app/6a26ac58eec06840ae4d3c47',
+    image: 'https://ik.imagekit.io/bugthrive/labs/Echodesk-01_1xrW8i5eE.png',
     url: 'https://labs.bugthrive.com/achievement/echodesk-app/6a26ac58eec06840ae4d3c47',
     description: 'BugThrive Labs achievement'
   }
