@@ -994,3 +994,100 @@ body.js .reveal.visible {
     height: 210px;
   }
 }
+/* Final clean gallery layout for Certificates and Customer Satisfaction */
+#certificates,
+#satisfaction,
+#badges {
+  scroll-margin-top: 120px;
+}
+
+#certificateGallery,
+#satisfactionGallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 26px;
+  margin-top: 34px;
+}
+
+#certificateGallery .media-card,
+#satisfactionGallery .media-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(16, 18, 26, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 24px rgba(255, 0, 60, 0.16);
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+#certificateGallery .media-card:hover,
+#satisfactionGallery .media-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 23, 68, 0.75);
+  box-shadow: 0 0 38px rgba(255, 23, 68, 0.35);
+}
+
+#certificateGallery .media-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #ffffff;
+  padding: 10px;
+}
+
+#satisfactionGallery .media-card img {
+  width: 100%;
+  height: 330px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #ffffff;
+  padding: 10px;
+}
+
+#certificateGallery .media-body,
+#satisfactionGallery .media-body {
+  padding: 18px 20px 20px;
+  text-align: center;
+}
+
+#certificateGallery .media-body h3,
+#satisfactionGallery .media-body h3 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+/* Remove left empty space from old two-column certificate layout */
+#certificates .two-column,
+#satisfaction .two-column {
+  display: block;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 1000px) {
+  #certificateGallery,
+  #satisfactionGallery {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  #certificateGallery,
+  #satisfactionGallery {
+    grid-template-columns: 1fr;
+  }
+
+  #certificateGallery .media-card img {
+    height: 210px;
+  }
+
+  #satisfactionGallery .media-card img {
+    height: 280px;
+  }
+}
