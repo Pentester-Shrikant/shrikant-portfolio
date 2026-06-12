@@ -116,41 +116,6 @@ const fallbackBadgeSvg = `data:image/svg+xml;utf8,${encodeURIComponent(`
 
 const badgeLinks = [
   {
-    title: 'Advent of Cyber',
-    platform: 'TryHackMe',
-    image: 'https://assets.tryhackme.com/room-badges/1439b0d200fa3b7ef154b467b4d551d1.png',
-    url: 'https://assets.tryhackme.com/room-badges/1439b0d200fa3b7ef154b467b4d551d1.png',
-    description: 'Verified TryHackMe room badge'
-  },
-  {
-    title: 'Blue',
-    platform: 'TryHackMe',
-    image: 'https://assets.tryhackme.com/room-badges/a64e088212fb9a34edd9f5de873ef468.png',
-    url: 'https://assets.tryhackme.com/room-badges/a64e088212fb9a34edd9f5de873ef468.png',
-    description: 'Verified TryHackMe room badge'
-  },
-  {
-    title: 'Ice',
-    platform: 'TryHackMe',
-    image: 'https://assets.tryhackme.com/room-badges/03f7d810170bb89b0f30dc34f714429d.png',
-    url: 'https://assets.tryhackme.com/room-badges/03f7d810170bb89b0f30dc34f714429d.png',
-    description: 'Verified TryHackMe room badge'
-  },
-  {
-    title: 'Mr Robot',
-    platform: 'TryHackMe',
-    image: 'https://assets.tryhackme.com/room-badges/356f0e028681fdc21515042572a2e1c4.png',
-    url: 'https://assets.tryhackme.com/room-badges/356f0e028681fdc21515042572a2e1c4.png',
-    description: 'Verified TryHackMe room badge'
-  },
-  {
-    title: 'Pentesting Principles',
-    platform: 'TryHackMe',
-    image: 'https://assets.tryhackme.com/room-badges/98e1a1f3d80d8714a09f86b4c089398c.png',
-    url: 'https://assets.tryhackme.com/room-badges/98e1a1f3d80d8714a09f86b4c089398c.png',
-    description: 'Verified TryHackMe room badge'
-  },
-  {
     title: 'HTB Academy Badge 01',
     platform: 'Hack The Box',
     image: 'https://academy.hackthebox.com/storage/badges/academician.png',
@@ -205,6 +170,41 @@ const badgeLinks = [
     image: 'https://ik.imagekit.io/bugthrive/labs/Echodesk-01_1xrW8i5eE.png',
     url: 'https://labs.bugthrive.com/achievement/echodesk-app/6a26ac58eec06840ae4d3c47',
     description: 'BugThrive Labs achievement'
+  },
+  {
+    title: 'Advent of Cyber',
+    platform: 'TryHackMe',
+    image: 'https://assets.tryhackme.com/room-badges/1439b0d200fa3b7ef154b467b4d551d1.png',
+    url: 'https://assets.tryhackme.com/room-badges/1439b0d200fa3b7ef154b467b4d551d1.png',
+    description: 'Verified TryHackMe room badge'
+  },
+  {
+    title: 'Blue',
+    platform: 'TryHackMe',
+    image: 'https://assets.tryhackme.com/room-badges/a64e088212fb9a34edd9f5de873ef468.png',
+    url: 'https://assets.tryhackme.com/room-badges/a64e088212fb9a34edd9f5de873ef468.png',
+    description: 'Verified TryHackMe room badge'
+  },
+  {
+    title: 'Ice',
+    platform: 'TryHackMe',
+    image: 'https://assets.tryhackme.com/room-badges/03f7d810170bb89b0f30dc34f714429d.png',
+    url: 'https://assets.tryhackme.com/room-badges/03f7d810170bb89b0f30dc34f714429d.png',
+    description: 'Verified TryHackMe room badge'
+  },
+  {
+    title: 'Mr Robot',
+    platform: 'TryHackMe',
+    image: 'https://assets.tryhackme.com/room-badges/356f0e028681fdc21515042572a2e1c4.png',
+    url: 'https://assets.tryhackme.com/room-badges/356f0e028681fdc21515042572a2e1c4.png',
+    description: 'Verified TryHackMe room badge'
+  },
+  {
+    title: 'Pentesting Principles',
+    platform: 'TryHackMe',
+    image: 'https://assets.tryhackme.com/room-badges/98e1a1f3d80d8714a09f86b4c089398c.png',
+    url: 'https://assets.tryhackme.com/room-badges/98e1a1f3d80d8714a09f86b4c089398c.png',
+    description: 'Verified TryHackMe room badge'
   }
 ];
 
