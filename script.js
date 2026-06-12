@@ -93,17 +93,6 @@ const certificateImages = [
   { title: 'Certificate', file: 'certificates/certificate.png' }
 ];
 
-const certificatesGrid = document.getElementById('certificatesGrid');
-
-if (certificatesGrid && certificateImages.length) {
-  certificatesGrid.innerHTML = certificateImages.map(cert => `
-    <a class="certificate-card" href="${cert.image}" target="_blank" rel="noopener noreferrer">
-      <img src="${cert.image}" alt="${cert.title}">
-      <h3>${cert.title}</h3>
-      <p>Click to view certificate</p>
-    </a>
-  `).join('');
-}
 // Add customer satisfaction images here after uploading them to the customer-satisfaction folder.
 // Example: { title: 'Client Feedback', file: 'customer-satisfaction/client-feedback.png' }
 const satisfactionImages = [
