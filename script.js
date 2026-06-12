@@ -4,85 +4,105 @@ const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas ? canvas.getContext('2d') : null;
 let width, height, columns, drops;
 
-function resize(){
-  if(!canvas || !ctx) return;
+function resize() {
+  if (!canvas || !ctx) return;
   width = canvas.width = innerWidth;
   height = canvas.height = innerHeight;
   columns = Math.floor(width / 18);
   drops = Array(columns).fill(1);
 }
+
 resize();
 addEventListener('resize', resize);
 
-function matrix(){
-  if(!canvas || !ctx) return;
+function matrix() {
+  if (!canvas || !ctx) return;
+
   ctx.fillStyle = 'rgba(3,3,5,0.12)';
-  ctx.fillRect(0,0,width,height);
+  ctx.fillRect(0, 0, width, height);
+
   ctx.fillStyle = '#ff1744';
   ctx.font = '14px monospace';
-  for(let i=0;i<drops.length;i++){
-    const text = Math.random() > .5 ? '0' : '1';
-    ctx.fillText(text, i*18, drops[i]*18);
-    if(drops[i]*18 > height && Math.random() > .975) drops[i]=0;
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = Math.random() > 0.5 ? '0' : '1';
+    ctx.fillText(text, i * 18, drops[i] * 18);
+
+    if (drops[i] * 18 > height && Math.random() > 0.975) {
+      drops[i] = 0;
+    }
+
     drops[i]++;
   }
 }
+
 setInterval(matrix, 55);
 
 const menuButton = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
-if(menuButton && navLinks){
-  menuButton.addEventListener('click',()=>{
+if (menuButton && navLinks) {
+  menuButton.addEventListener('click', () => {
     navLinks.classList.toggle('open');
   });
 }
 
-document.querySelectorAll('.nav-links a').forEach(a=>{
-  a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open'));
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (navLinks) navLinks.classList.remove('open');
+  });
 });
 
 const year = document.getElementById('year');
-if(year) year.textContent = new Date().getFullYear();
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
 const glow = document.querySelector('.cursor-glow');
-if(glow){
-  addEventListener('pointermove', e=>{
-    glow.style.left = e.clientX + 'px';
-    glow.style.top = e.clientY + 'px';
+
+if (glow) {
+  addEventListener('pointermove', event => {
+    glow.style.left = event.clientX + 'px';
+    glow.style.top = event.clientY + 'px';
   });
 }
 
-if('IntersectionObserver' in window){
-const reveal = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-      reveal.unobserve(entry.target);
-    }
-  });
-},{threshold:.14});
+if ('IntersectionObserver' in window) {
+  const reveal = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        reveal.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14 });
 
-document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el));
+  document.querySelectorAll('.reveal').forEach(element => {
+    reveal.observe(element);
+  });
 } else {
-  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+  document.querySelectorAll('.reveal').forEach(element => {
+    element.classList.add('visible');
+  });
 }
 
-document.querySelectorAll('.tilt-card').forEach(card=>{
-  card.addEventListener('mousemove', e=>{
-    const r = card.getBoundingClientRect();
-    const x = e.clientX - r.left;
-    const y = e.clientY - r.top;
-    const rx = ((y / r.height) - .5) * -10;
-    const ry = ((x / r.width) - .5) * 10;
-    card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+document.querySelectorAll('.tilt-card').forEach(card => {
+  card.addEventListener('mousemove', event => {
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const rotateX = ((y / rect.height) - 0.5) * -10;
+    const rotateY = ((x / rect.width) - 0.5) * 10;
+
+    card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
   });
-  card.addEventListener('mouseleave',()=>{
+
+  card.addEventListener('mouseleave', () => {
     card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateY(0)';
   });
 });
 
-// Certificate images
+/* Certificates */
 const certificateImages = [
   {
     title: 'Ethical Hacking',
@@ -101,17 +121,16 @@ const certificateImages = [
     file: 'certificates/certificate.png'
   }
 ];
-// Add customer satisfaction images here after uploading them to the customer-satisfaction folder.
-// Example: { title: 'Client Feedback', file: 'customer-satisfaction/client-feedback.png' }
+
+/* Customer Satisfaction */
 const satisfactionImages = [
-  // { title: 'Client Feedback', file: 'customer-satisfaction/client-feedback.png' }
-  { title: 'Client Feedback', file: 'customer-satisfaction/2026-06-13 02_00_57-badge_render_fix - File Explorer.png';
+  {
+    title: 'Client Satisfaction Feedback',
+    file: 'customer-satisfaction/2026-06-13%2002_00_57-badge_render_fix%20-%20File%20Explorer.png'
+  }
 ];
 
-// Add your solved CTF badge cards here.
-// Use direct image URLs in the image field. Use the achievement/profile page in the url field.
-// Note: Hack The Box / BugThrive achievement page URLs may not always work as image sources,
-// so the card has a built-in fallback image and still opens the real achievement link.
+/* Badge fallback */
 const fallbackBadgeSvg = `data:image/svg+xml;utf8,${encodeURIComponent(`
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="280" viewBox="0 0 600 280">
   <defs>
@@ -119,7 +138,13 @@ const fallbackBadgeSvg = `data:image/svg+xml;utf8,${encodeURIComponent(`
       <stop offset="0" stop-color="#182536"/>
       <stop offset="1" stop-color="#380012"/>
     </linearGradient>
-    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   <rect width="600" height="280" rx="22" fill="url(#g)"/>
   <rect x="18" y="18" width="564" height="244" rx="18" fill="none" stroke="#ff1744" stroke-opacity=".45"/>
@@ -128,6 +153,7 @@ const fallbackBadgeSvg = `data:image/svg+xml;utf8,${encodeURIComponent(`
   <text x="300" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#ffffff">Verified Badge</text>
 </svg>` )}`;
 
+/* Badges */
 const badgeLinks = [
   {
     title: 'HTB Academy Badge 01',
@@ -241,11 +267,11 @@ function renderImageGallery(containerId, items, emptyText) {
   `).join('');
 }
 
-function renderBadges(){
+function renderBadges() {
   const container = document.getElementById('badgesGrid');
-  if(!container) return;
+  if (!container) return;
 
-  if(!badgeLinks.length){
+  if (!badgeLinks.length) {
     container.innerHTML = '<div class="empty-card reveal visible">Add your solved CTF badges in script.js under badgeLinks.</div>';
     return;
   }
