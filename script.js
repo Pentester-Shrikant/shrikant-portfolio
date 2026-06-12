@@ -86,7 +86,6 @@ document.querySelectorAll('.tilt-card').forEach(card=>{
 // Example: { title: 'Certificate Name', file: 'certificates/my-certificate.png' }
 const certificateImages = [
   // { title: 'My Certificate', file: 'certificates/my-certificate.png' }
-  const certificateImages = [
   { title: 'CISEH Certificate', file: 'certificates/CISEH.png' },
   { title: 'CPTE Certificate', file: 'certificates/CPTE.png' },
   { title: 'UC Certificate', file: 'certificates/UC-364a2adc-234e-440d-9753-f0f49a6eb2b2.png' },
