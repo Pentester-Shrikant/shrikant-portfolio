@@ -105,6 +105,7 @@ const certificateImages = [
 // Example: { title: 'Client Feedback', file: 'customer-satisfaction/client-feedback.png' }
 const satisfactionImages = [
   // { title: 'Client Feedback', file: 'customer-satisfaction/client-feedback.png' }
+  { title: 'Client Feedback', file: 'customer-satisfaction/2026-06-13 02_00_57-badge_render_fix - File Explorer.png';
 ];
 
 // Add your solved CTF badge cards here.
