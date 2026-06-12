@@ -99,7 +99,7 @@ const satisfactionImages = [
 const badgeLinks = [
   {
     title: 'Blacktop',
-    image: 'badges/blacktop.svg',
+    image: 'https://ik.imagekit.io/bugthrive/labs/blacktop-01_o0uxZWWg5j.png',
     url: 'https://labs.bugthrive.com/achievement/blacktop/6a26ac58eec06840ae4d3c47',
     description: 'Completed the Blacktop challenge',
     rank: '2248',
