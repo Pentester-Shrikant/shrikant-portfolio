@@ -101,6 +101,7 @@ const certificateImages = [
     file: 'certificates/certificate.png'
   }
 ];
+// Add customer satisfaction images here after uploading them to the customer-satisfaction folder.
 // Example: { title: 'Client Feedback', file: 'customer-satisfaction/client-feedback.png' }
 const satisfactionImages = [
   // { title: 'Client Feedback', file: 'customer-satisfaction/client-feedback.png' }
@@ -220,20 +221,23 @@ const badgeLinks = [
   }
 ];
 
-function renderImageGallery(containerId, items, emptyText){
+function renderImageGallery(containerId, items, emptyText) {
   const container = document.getElementById(containerId);
-  if(!container) return;
+  if (!container) return;
 
-  if(!items.length){
+  if (!items.length) {
     container.innerHTML = `<div class="empty-card reveal visible">${emptyText}</div>`;
     return;
   }
 
   container.innerHTML = items.map(item => `
-    <article class="media-card reveal visible">
-      <img src="${item.file}" alt="${item.title}">
-      <div class="media-body"><h3>${item.title}</h3></div>
-    </article>
+    <a class="media-card reveal visible" href="${item.file}" target="_blank" rel="noopener noreferrer">
+      <img src="${item.file}" alt="${item.title}" loading="lazy">
+      <div class="media-body">
+        <h3>${item.title}</h3>
+        <p>Click to view full certificate</p>
+      </div>
+    </a>
   `).join('');
 }
 
@@ -276,6 +280,16 @@ function renderBadges(){
   }).join('');
 }
 
-renderImageGallery('certificateGallery', certificateImages, 'Certificates section is ready. Add images in the certificates folder, then list them in script.js under certificateImages.');
-renderImageGallery('satisfactionGallery', satisfactionImages, 'Customer satisfaction section is ready. Add testimonial or feedback images in the customer-satisfaction folder, then list them in script.js under satisfactionImages.');
+renderImageGallery(
+  'certificateGallery',
+  certificateImages,
+  'Certificates section is ready. Add images in the certificates folder.'
+);
+
+renderImageGallery(
+  'satisfactionGallery',
+  satisfactionImages,
+  'Customer satisfaction section is ready. Add testimonial or feedback images in the customer-satisfaction folder.'
+);
+
 renderBadges();
