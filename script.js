@@ -86,7 +86,22 @@ document.querySelectorAll('.tilt-card').forEach(card=>{
 // Example: { title: 'Certificate Name', file: 'certificates/my-certificate.png' }
 const certificateImages = [
   // { title: 'My Certificate', file: 'certificates/my-certificate.png' }
-  { title: 'My Certificate', file: 'https://github.com/Pentester-Shrikant/shrikant-portfolio/blob/master/certificates/CISEH.jpeg'
+  {
+    title: 'CISEH Certificate',
+    image: 'certificates/CISEH.jpeg'
+  },
+  {
+    title: 'CPTE Certificate',
+    image: 'certificates/CPTE.jpeg'
+  },
+  {
+    title: 'UC Certificate',
+    image: 'certificates/UC-364a2adc-234e-440d-9753-f0f49a6eb2b2.jpg'
+  },
+  {
+    title: 'Certificate',
+    image: 'certificates/certificate.jpg'
+  }
 ];
 
 // Add customer satisfaction images here after uploading them to the customer-satisfaction folder.
